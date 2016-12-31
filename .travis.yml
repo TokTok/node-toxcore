@@ -7,11 +7,11 @@ cache:
 
 node_js:
   - "0.10"
-#  - "0.12"
-#  - "1"
-#  - "2"
-#  - "3.2"
-#  - "4"
+  - "0.12"
+  - "1"
+  - "2"
+  - "3.2"
+  - "4"
 
 addons: {apt: {packages: [yasm, g++-4.8], sources: [ubuntu-toolchain-r-test]}}
 
@@ -26,3 +26,10 @@ before_script:
   - export LD_LIBRARY_PATH="$CACHE_DIR/usr/lib"
   - export PKG_CONFIG_PATH="$CACHE_DIR/usr/lib/pkgconfig"
   - tools/install-deps.sh > /dev/null
+
+branches:
+  only:
+  - master
+
+git:
+  depth: 1
