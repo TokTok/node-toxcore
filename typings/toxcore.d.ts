@@ -415,6 +415,7 @@ declare module 'toxcore' {
     TOX_ERR_NEW_LOAD_ENCRYPTED: number, //8,
     TOX_ERR_NEW_LOAD_DECRYPTION_FAILED: number, //9,
     TOX_ERR_NEW_LOAD_BAD_FORMAT: number, //10,
+    TOX_ERR_NEW_PROXY_WITH_UDP: number, //11,
   
     TOX_ERR_OPTIONS_NEW_OK: number, //0,
     TOX_ERR_OPTIONS_NEW_MALLOC: number, //1,
