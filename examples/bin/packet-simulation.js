@@ -48,11 +48,11 @@ rx.on("friendRequest", function(e) {
 });
 
 rx.on("friendConnectionStatus", function(e) {
-  console.log("[rx] Friend connection status: %s", e.isConnected() ? "online' : 'offline");
+  console.log("[rx] Friend connection status: %s", e.isConnected() ? "online" : "offline");
 });
 
 var packetCallback = function(e) {
-  var packetType = e.isLossless() ? "lossless' : 'lossy";
+  var packetType = e.isLossless() ? "lossless" : "lossy";
   console.log("** Received %s packet from [%d] **", packetType, e.friend());
   console.log("Id: 0x%s", e.id().toString(16));
   console.log("Data: %s", e.data().toString());
@@ -95,7 +95,7 @@ tx.on("selfConnectionStatus", function(e) {
 });
 
 tx.on("friendConnectionStatus", function(e) {
-  console.log("[tx] Friend connection status: %s", e.isConnected() ? "online' : 'offline");
+  console.log("[tx] Friend connection status: %s", e.isConnected() ? "online" : "offline");
   if(e.isConnected()) {
     console.log("[tx] Sending lossless + lossy packets");
     tx.sendLosslessPacketSync(e.friend(), LOSSLESS_CHANNEL, Buffer.from("hello-world-lossless"));
@@ -136,7 +136,7 @@ tx.on("friendLossyPacket", function(e) {
   });
 
   tox.on("selfConnectionStatus", function(e) {
-    console.log("[%s] %s", toxName, e.isConnected() ? "Connected' : 'Disconnected");
+    console.log("[%s] %s", toxName, e.isConnected() ? "Connected" : "Disconnected");
   });
 
   console.log("[%s] Address: %s", toxName, tox.getAddressHexSync().toUpperCase());

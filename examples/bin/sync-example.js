@@ -128,7 +128,7 @@ tox.on('friendMessage', function(e) {
 
 tox.on('friendLosslessPacket', function(e){
   var name = tox.getFriendNameSync(e.friend());  
-  console.log('**Received lossless packet from ' + '[' + e.friend() + ']');
+  console.log('**Received lossless packet from ' + '[' + e.friend() + '] (' + name + ')');
   console.log(e.data().toString());
   tox.sendLosslessPacketSync(e.friend(), Buffer.from('lossless-receipt-packet-content'));
 });
