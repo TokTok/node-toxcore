@@ -1,5 +1,5 @@
 ---
-_extends: template
+_extends: .github
 
 repository:
   name: js-toxcore-c
@@ -14,11 +14,8 @@ branches:
         contexts:
           - Codacy/PR Quality Review
           - DeepScan
-          - Milestone Check
           - Travis CI - Pull Request
-          - WIP
           - code-review/reviewable
           - codecov/patch
           - codecov/project
-          - license/cla
           - security/snyk (TokTok)
