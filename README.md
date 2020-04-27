@@ -1,16 +1,15 @@
-js-toxcore-c [![Build Status](https://img.shields.io/travis/TokTok/js-toxcore-c.svg?style=flat-square)](http://travis-ci.org/TokTok/js-toxcore-c) [![NPM Version](https://img.shields.io/npm/v/js-toxcore-c.svg?style=flat-square)](https://www.npmjs.org/package/js-toxcore-c)
-============
+# js-toxcore-c [![Build Status](https://img.shields.io/travis/TokTok/js-toxcore-c.svg?style=flat-square)](http://travis-ci.org/TokTok/js-toxcore-c) [![NPM Version](https://img.shields.io/npm/v/js-toxcore-c.svg?style=flat-square)](https://www.npmjs.org/package/js-toxcore-c)
 
 [![NPM](https://nodei.co/npm/js-toxcore-c.png?mini=true)](https://nodei.co/npm/js-toxcore-c/)
 
 Node.js bindings for [libtoxcore], built off of [node-ffi].
 
-Note: Installing this package does not install [libtoxcore]. It is expected
-that [libtoxcore] is installed prior to using **js-toxcore-c**.
+Note: Installing this package does not install [libtoxcore]. It is expected that
+[libtoxcore] is installed prior to using **js-toxcore-c**.
 
 If you see compiler errors while trying to npm install js-toxcore-c, you
-[may](https://github.com/node-ffi/node-ffi/issues/451) need to install
-node-ffi manually using npm:
+[may](https://github.com/node-ffi/node-ffi/issues/451) need to install node-ffi
+manually using npm:
 
 ```sh
 $ npm install https://github.com/node-ffi/node-ffi
@@ -18,15 +17,14 @@ $ npm install https://github.com/node-ffi/node-ffi
 
 ### New API Progress
 
-- [x] toxcore (missing conferences)
-- [ ] toxav
-- [x] toxencryptsave
-- [ ] Higher level API
-
+-   [x] toxcore (missing conferences)
+-   [ ] toxav
+-   [x] toxencryptsave
+-   [ ] Higher level API
 
 ### Synchronous Example
 
-``` js
+```js
 var toxcore = require('js-toxcore-c');
 
 // Create a default Tox instance
@@ -77,11 +75,9 @@ tox.start();
 
 For more examples, see the `examples/` directory.
 
-
 ### Documentation
 
 Generating the documentation should be as easy as `grunt jsdoc`.
-
 
 [libtoxcore]:https://github.com/TokTok/c-toxcore
 [node-ffi]:https://github.com/node-ffi/node-ffi
