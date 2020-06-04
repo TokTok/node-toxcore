@@ -18,10 +18,6 @@ jobs:
     - node_js: "11"
       if: type IN (push, api, cron)
     - node_js: "10"
-      if: type IN (push, api, cron)
-    - node_js: "9"
-      if: type IN (push, api, cron)
-    - node_js: "8"
 
 addons:
   apt:
