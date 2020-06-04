@@ -35,7 +35,7 @@
     "format": "prettier --write '**/*.js' '**/*.ts' '**/*.json'"
   },
   "dependencies": {
-    "ffi-napi": "^2.4.7",
+    "ffi-napi": "^3.0.0",
     "ref-array-napi": "^1.2.0",
     "ref-napi": "^1.4.3",
     "ref-struct-napi": "^1.1.0",
