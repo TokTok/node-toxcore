@@ -37,7 +37,7 @@
   "dependencies": {
     "ffi-napi": "^2.4.7",
     "ref-array-napi": "^1.2.0",
-    "ref-napi": "^1.4.3",
+    "ref-napi": "^3.0.0",
     "ref-struct-napi": "^1.1.0",
     "underscore": "^1.10.2"
   },
