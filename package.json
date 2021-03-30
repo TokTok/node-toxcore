@@ -39,7 +39,7 @@
     "ref-array-napi": "^1.2.0",
     "ref-napi": "^1.4.3",
     "ref-struct-napi": "^1.1.0",
-    "underscore": "^1.10.2"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "async": "^3.2.0",
