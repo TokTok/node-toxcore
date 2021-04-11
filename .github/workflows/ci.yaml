@@ -1,0 +1,45 @@
+on:
+  push:
+    branches-ignore:
+    - 'master'
+  pull_request:
+  schedule:
+  - cron: '0 4 * * *' # Run at 04:00 every day.
+
+jobs:
+  build:
+
+    runs-on: ubuntu-16.04
+
+    strategy:
+      matrix:
+        node-version: [8.x, 9.x, 10.x, 12.x, 13.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: sudo apt-get install libopus-dev libvpx-dev
+    - name: Set up environment variables
+      run: |
+        # GITHUB_ENV doesn't update the env vars in the current step, so export this one too.
+        export CACHE_DIR="$HOME/cache"
+        echo CACHE_DIR="$HOME/cache" >> $GITHUB_ENV
+        echo CFLAGS="-I$CACHE_DIR/usr/include -O3" >> $GITHUB_ENV
+        echo LDFLAGS="-L$CACHE_DIR/usr/lib" >> $GITHUB_ENV
+        echo LD_LIBRARY_PATH="$CACHE_DIR/usr/lib" >> $GITHUB_ENV
+        echo PKG_CONFIG_PATH="$CACHE_DIR/usr/lib/pkgconfig" >> $GITHUB_ENV
+    - name: Cache compiled dependencies
+      uses: actions/cache@v2
+      with:
+        path: ${{ env.CACHE_DIR }}
+        key: ${{ runner.OS }}-${{ hashFiles('tools/install-deps.sh') }}
+    - run: tools/install-deps.sh
+    - run: npm install
+    - run: npm run doc
+    - run: npm run test
+    - run: npm run report-coverage
+    - run: npm run format && git diff --exit-code
+      if: ${{ matrix.node-version == '13.x' }}
